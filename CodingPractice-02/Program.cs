@@ -45,5 +45,38 @@ if (text == null)
     Console.WriteLine("텍스트가 없습니다.");
 }
 
+string name2 = null;
+Console.WriteLine($"결과: {name2?.ToUpper()}");
+name2 = "hello";
+Console.WriteLine($"결과: {name2?.ToUpper()}");
 
-// TODO: ### 2-3. 메서드 호출에 사용
+List<string> items = null;
+Console.WriteLine($"아이템 수: {items?.Count}");
+items = new List<string>() { "사과", "바나나" };
+int? itemCount = items?.Count;
+Console.WriteLine($"아이템 수: {itemCount}");
+
+string text1 = null;
+Console.WriteLine($"첫 글자: {text1?[0]}");
+char? firstChar = text1?[0];
+text1 = "Hello";
+Console.WriteLine($"첫 글자: {text1?[0]}");
+
+string message2 = null;
+Console.WriteLine($"길이: {message2?.Length ?? 0}");
+message2 = "Hello";
+Console.WriteLine($"길이: {message2?.Length ?? 0}");
+
+List<string> names = null;
+
+Console.WriteLine($"이름 수: {names?.Count ?? 0}");
+names = new List<string>() { "Kim", "Lee", "Park" };
+Console.WriteLine($"이름 수: {names?.Count ?? 0}");
+
+string playerName1 = null;
+int? playerLevel = null;
+List<string> inventory = null;
+
+Console.WriteLine($"플레이어 이름: {playerName1 ?? "Unknown"}");
+Console.WriteLine($"레벨: {playerLevel ?? 1}");
+Console.WriteLine($"인벤토리 아이템: {inventory?.Count ?? 0}개");
